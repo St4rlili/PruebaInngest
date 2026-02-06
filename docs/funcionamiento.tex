@@ -1,0 +1,131 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\linespread{1.2}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=cyan!70!black,
+}
+
+\renewcommand{\lstlistingname}{Código}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{black!5},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{black!20},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    captionpos=b,
+}
+\lstset{style=mystyle}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/inngest.png}
+    
+    \vspace{3cm}
+    
+    \Huge\bfseries
+    Documentación Técnica: \\
+    Bot de Telegram con Inngest
+    
+    \vfill
+    
+    \Large
+    \textbf{Autor:} Pedro José Meixús Belsol \\
+    \vspace{0.5cm}
+    \today
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+En esta documentación se detalla el proceso de creación de un bot de Telegram y funcionamiento con nuestra app con Inngest. La app permite al usuario escribir un mensaje y que el bot les deuvelva el mensaje.
+
+\section{Creación del Bot de Telegram}
+
+Primero, creamos un bot de Telegram utilizando el BotFather, obteniendo un token de autenticación necesario para interactuar con la API de Telegram.
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/creacion_bot.jpg}
+\end{center}
+
+\vspace{0.5cm}
+
+Y ahora iniciamos la conversación con nuestro bot.
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/iniciar_bot.jpg}
+\end{center}
+
+\vspace{0.5cm}
+
+\section{Funcionamiento}
+
+Vamos a explicar el funcionamiento de la aplicación. Primero lanzaremos la API con el siguiente comando:
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/iniciar_api.png}
+\end{center}
+
+\vspace{0.5cm}
+
+Al iniciarse correctamente deberiamos ver ese mensaje de que está escuchando en el puerto 3000.
+
+Ahora iniciamos el Inngest-cli con el siguiente comando:
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/iniciar_inngest.png}
+\end{center}
+
+\vspace{0.5cm}
+
+Si todo ha ido bien, al entrar en 'localhost:3000' deberiamos ver el input para escribir el mensaje que queremos que nos devuelva el bot.
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{images/input_mensaje.png}
+\end{center}
+
+\vspace{0.5cm}
+
+Al escribir el mensaje y darle a enviar, el bot de Telegram nos devolverá el mismo mensaje.
+
+\vspace{0.5cm}
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{images/respuesta_bot.jpg}
+\end{center}
+
+\vspace{0.5cm}
+
+Con esto hemos comprobado que el bot de Telegram funciona correctamente con nuestra app con Inngest.
+
+\end{document}
