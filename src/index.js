@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Importa funciones Inngest
 import { serve } from "inngest/express";
 import { inngest as inngestClient } from "./inngest/client.js";
 import sendTelegram from "./inngest/functions/sendTelegram.js";
@@ -15,10 +14,8 @@ const app = express();
 
 app.use(express.json());
 
-// Sirve el HTML estático
 app.use(express.static(path.join(__dirname, "../public")));
 
-// Ruta que usa Inngest DevServer
 app.use("/api/inngest", serve({ client: inngestClient, functions: [sendTelegram] }));
 
 // Endpoint para disparar desde HTML o scripts
