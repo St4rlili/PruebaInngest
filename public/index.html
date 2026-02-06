@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar Telegram</title>
+</head>
+<body>
+  <input type="text" id="msg" placeholder="Mensaje">
+  <button onclick="sendMessage()">Enviar</button>
+
+  <script>
+    async function sendMessage() {
+      const msg = document.getElementById("msg").value;
+      await fetch("/send-event", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ message: msg })
+      });
+      alert("Evento enviado!");
+    }
+  </script>
+</body>
+</html>
